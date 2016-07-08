@@ -13,7 +13,8 @@
         android:id="@+id/TextView01"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="5sp"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
         android:text="@string/hello" />
 
 </RelativeLayout>
