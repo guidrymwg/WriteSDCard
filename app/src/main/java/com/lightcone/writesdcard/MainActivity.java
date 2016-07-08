@@ -67,11 +67,26 @@ public class MainActivity extends AppCompatActivity {
 
     private void writeToSDFile() {
 
-        // Find the root of the external storage.
-        // See http://developer.android.com/guide/topics/data/data-storage.html#filesExternal
+        /* First find the root of the external storage. See
+        *    http://developer.android.com/guide/topics/data/data-storage.html#filesExternal
+        * The method getExternalStorageDirectory(string) returns the user storage associated with the
+        * app, which doesn't require write permissions after API 18.  The string argument specifies various
+        * regions of this storage (it can be null).  For example,
+        *
+        * null specifies the root of the storage for this app
+        * Environment.DIRECTORY_NOTIFICATIONS specifies the Notifications directory of app storage
+        * Environvment.DIRECTORY_DOWNLOADS specifies standard directory for files downloaded by user
+        * Environment.DIRECTORY_PICTURES specifies standard directory for pictures available to user
+        * etc.
+        *
+        * See the constants of the Environment class at
+        *    https://developer.android.com/reference/android/os/Environment.html
+        * for other possibilities.
+        * */
 
-        // File root = android.os.Environment.getExternalStorageDirectory();
-        File root = this.getExternalFilesDir(Environment.DIRECTORY_NOTIFICATIONS);
+        // File root = android.os.Environment.getExternalStorageDirectory();  // Old version
+        //File root = this.getExternalFilesDir(Environment.DIRECTORY_NOTIFICATIONS);
+        File root = this.getExternalFilesDir(null);
         tv.append("\nExternal file system root: " + root);
 
         // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
