@@ -1,5 +1,6 @@
 package com.lightcone.writesdcard;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -69,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         // Find the root of the external storage.
         // See http://developer.android.com/guide/topics/data/data-storage.html#filesExternal
 
-        File root = android.os.Environment.getExternalStorageDirectory();
+        // File root = android.os.Environment.getExternalStorageDirectory();
+        File root = this.getExternalFilesDir(Environment.DIRECTORY_NOTIFICATIONS);
         tv.append("\nExternal file system root: " + root);
 
         // See http://stackoverflow.com/questions/3551821/android-write-to-sd-card-folder
