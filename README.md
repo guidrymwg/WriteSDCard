@@ -1,5 +1,5 @@
 # WriteSDCard
-An Android app illustrating the basics of reading and writing to internal storage of the device.
+An Android app illustrating the basics of reading and writing to external storage ("SD card") of the device.
 
 The projects in these repositories correspond to individual lessons in the free online android programming course at http://eagle.phys.utk.edu/guidry/android/ 
 
