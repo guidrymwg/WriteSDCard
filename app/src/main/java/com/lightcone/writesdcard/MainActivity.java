@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         checkExternalMedia();
         writeToSDFile();
         readRaw();
-
     }
 
     /**
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             // Can't read or write
             mExternalStorageAvailable = mExternalStorageWriteable = false;
         }
-        tv.append("\n\nEXTERNAL MEDIA: readable="
+            tv.append("\n\nEXTERNAL MEDIA: readable="
                 + mExternalStorageAvailable + " writable=" + mExternalStorageWriteable);
     }
 
@@ -77,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
         *
         *    http://developer.android.com/guide/topics/data/data-storage.html#filesExternal
         *
-        * The method getExternalStorageDirectory(string) returns the user storage associated with the
+        * The method getExternalFilesDir(string) returns the user storage associated with the
         * app, which doesn't require write permissions after API 18.  The string argument specifies various
-        * regions of this storage (it can be null).  For example,
+        * regions of this storage.  For example,
         *
         * - null specifies the root of the storage for this app
         * - Environment.DIRECTORY_NOTIFICATIONS specifies the Notifications directory of app storage
@@ -90,13 +89,13 @@ public class MainActivity extends AppCompatActivity {
         *
         * See the fields of the Environment class at
         *    https://developer.android.com/reference/android/os/Environment.html
-        * for other possibilities.  For example, on my phone (running Android 6.0.1 in 2016) the root of
+        * for other possibilities.  For example, on my phone (running Android 6.0.1) the root of
         * the user storage for this specific app is found at
         *
         *    /storage/emulated/0/Android/data/com.lightcone.writesdcard/files
         * */
 
-        // Root of the data directories specific to this app, for which no write
+        // Root of the data directories Documents subdirectory specific to this app, for which no write
         // permission is required for Android 4.4 and later.
 
         File root = this.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
